@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Geometry Genius</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/icons/cube.png" type="image/x-icon">
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/cbd11b6038.js" crossorigin="anonymous"></script>
+    <!-- google font inter  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- daisyUi  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        main: '#414141',
+                        btnColor: '#1090D8',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter">
+    <header>
+        <div class="navbar bg-sky-100 max-w-full mx-auto rounded-lg py-3 px-5">
+            <div class="navbar-start">
+                <h2 class="font-bold text-2xl sm:text-3xl md:text-5xl text-slate-800">Interactive <br><span
+                        class="font-medium text-base  sm:text-xl md:text-3xl text-slate-600">Geometry
+                        Genius</span></h2>
+
+            </div>
+            <div class="navbar-end">
+                <button id="blogBtn"
+                    class="font-medium sm:font-bold text-lg sm:text-xl px-5 md:px-9 py-2 text-white bg-btnColor  rounded-lg hover:bg-sky-700">Blog</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="flex flex-col lg:flex-row gap-4 max-w-full mx-auto py-12 px-5">
+            <div class="card-section grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full lg:w-[70%]">
+                <!-- card 1 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/triangle.png" alt="triangle" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="triangle-title" class="font-bold text-2xl mt-6 ">Triangle</h2>
+                        <p class="mt-2 mb-5">Area (A) = 0.5 &times; b &times; h</p>
+                        <p class="mt-2 mb-5">b = <span id="trEditB">0</span>cm h = <span id="trEditH">0</span>cm <i
+                                id="trEdit" class="fa-regular fa-pen-to-square ml-2"></i></p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="triangle-b" type="text" placeholder="b"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="triangle-h" type="text" placeholder="h"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="trDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="">
+                            <button id="triangle-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 2 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/rectangle.png" alt="rectangle" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="rectangle-title" class="font-bold text-2xl mt-6 ">Rectangle</h2>
+                        <p class="mt-2 mb-5">Area (A) = w &times; l</p>
+                        <p class="mt-2 mb-5">w = <span id="recEditW">0</span>cm l = <span id="recEditL">0</span>cm <i
+                                id="recEdit" class="fa-regular fa-pen-to-square ml-2"></i></p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="rectangle-w" type="text" placeholder="w"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="rectangle-l" type="text" placeholder="l"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="recDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="card-actions">
+                            <button id="rectangle-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 3 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/parallelogram.png" alt="parallelogram" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="parallelogram-title" class="font-bold text-2xl mt-6 ">Parallelogram</h2>
+                        <p class="mt-2 mb-5">Area (A) = b &times; h</p>
+                        <p class="mt-2 mb-5">b = <span id="prEditB">0</span>cm h = <span id="prEditH">0</span>cm <i
+                                id="prEdit" class="fa-regular fa-pen-to-square ml-2"></i></p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="parallelogram-b" type="text" placeholder="b"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="parallelogram-h" type="text" placeholder="h"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="prDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="card-actions">
+                            <button id="parallelogram-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 4 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/rhombus.png" alt="rhombus" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="rhombus-title" class="font-bold text-2xl mt-6 ">Rhombus</h2>
+                        <p class="mt-2 mb-5">Area (A) = 0.5 &times; d<sub>1</sub> &times; d<sub>2</sub></p>
+                        <p class="mt-2 mb-5">d<sub>1</sub> = <span id="rmEditD1">0</span>cm d<sub>2</sub> = <span
+                                id="rmEditD2">0</span>cm <i id="rmEdit" class="fa-regular fa-pen-to-square ml-2"></i>
+                        </p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="rhombus-d1" type="text" placeholder="d1"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="rhombus-d2" type="text" placeholder="d2"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="rmDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="card-actions">
+                            <button id="rhombus-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 5 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/pentagon.png" alt="pentagon" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="pentagon-title" class="font-bold text-2xl mt-6 ">Pentagon</h2>
+                        <p class="mt-2 mb-5">Area (A) = 0.5 &times; p &times; b</p>
+                        <p class="mt-2 mb-5">p = <span id="pnEditP">0</span>cm b = <span id="pnEditB">0</span>cm <i
+                                id="pnEdit" class="fa-regular fa-pen-to-square ml-2"></i></p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="pentagon-p" type="text" placeholder="p"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="pentagon-b" type="text" placeholder="b"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="pnDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="card-actions">
+                            <button id="pentagon-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- card 6 -->
+                <div class="card bg-base-100 shadow-xl px-5 py-12 randomBg">
+                    <div class="h-[45%]">
+                        <img src="images/ellipse.png" alt="triangle" class="w-full h-full" />
+                    </div>
+                    <div class="text-center text-main">
+                        <h2 id="ellipse-title" class="font-bold text-2xl mt-6 ">Ellipse</h2>
+                        <p class="mt-2 mb-5">Area (A) = &Pi;ab</p>
+                        <p class="mt-2 mb-5">a = <span id="elEditA">0</span>cm b = <span id="elEditB">0</span>cm <i
+                                id="elEdit" class="fa-regular fa-pen-to-square ml-2"></i></p>
+                        <div class="flex gap-1 mb-6 justify-center items-center">
+                            <input id="ellipse-a" type="text" placeholder="a"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span>
+                            <input id="ellipse-b" type="text" placeholder="b"
+                                class="p-2 w-[35%] bg-[#F1F1F1] rounded-md text-black" />
+                            <span>cm</span> <i id="elDone"
+                                class="fa-solid fa-square-check mr-1 text-2xl text-btnColor"></i>
+                        </div>
+                        <div class="card-actions">
+                            <button id="ellipse-btn"
+                                class="font-bold text-xl p-4 text-white bg-btnColor w-full  rounded-lg hover:bg-sky-700">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area-calc w-full lg:w-[30%] border p-5 rounded-lg">
+                <h2 class="text-center font-bold text-xl underline mb-3">Area Calculation</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <tbody id="area-calculations" class="">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/utilities.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/edit.js"></script>
+</body>
+
+</html>

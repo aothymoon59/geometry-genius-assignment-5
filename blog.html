@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/icons/content.png" type="image/x-icon">
+    <!-- google font inter  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- daisyUi  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        main: '#414141',
+                        btnColor: '#1090D8',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter">
+    <header>
+        <div class="navbar bg-sky-100 max-w-full mx-auto rounded-lg py-3 px-5">
+            <div class="navbar-start">
+                <h2 class="font-bold text-2xl sm:text-3xl md:text-5xl text-slate-800">Interactive <br><span
+                        class="font-medium text-xl md:text-3xl text-slate-600">Blogs</span></h2>
+            </div>
+            <div class="navbar-end">
+                <button id="geometryBtn"
+                    class="font-medium sm:font-bold text-lg sm:text-xl px-5 md:px-9 py-2 text-white bg-btnColor  rounded-lg hover:bg-sky-700">Geometry</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="max-w-full mx-auto py-12 px-5">
+            <div class="grid grid-cols-1 gap-5">
+                <!-- question 1 -->
+                <div class="card md:card-side bg-base-100 shadow-xl rounded-lg">
+                    <div class="w-full md:w-[40%]"><img class="w-full h-[250px] md:h-full rounded-lg"
+                            src="images/blog-image/js-dom.png" alt="dom" />
+                    </div>
+                    <div class="card-body px-2 w-full md:w-[60%]">
+                        <div tabindex="0"
+                            class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                            <div class="collapse-title text-xl md:text-2xl font-semibold">
+                                What is DOM and what is the purpose of DOM?
+                            </div>
+                            <div class="collapse-content">
+                                <p>Abbreviation of DOM is Document Object Model.The model is built in a tree structure
+                                    of objects and defines.We can create interactive, dynamic web pages using JavaScript
+                                    DOM.We can modify and add new html and css by using js DOM. By using js DOM we can
+                                    make our website more attractive and user friendly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- question 2 -->
+                <div class="card md:card-side bg-base-100 shadow-xl rounded-lg">
+                    <div class="w-full md:w-[40%]"><img class="w-full h-[250px] md:h-full rounded-lg"
+                            src="images/blog-image/dom-selector.png" alt="selector" />
+                    </div>
+                    <div class="card-body px-2 w-full md:w-[60%]">
+                        <div tabindex="0"
+                            class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                            <div class="collapse-title text-xl md:text-2xl font-semibold">
+                                How will you select HTML elements using DOM? Name the DOM methods.
+                            </div>
+                            <div class="collapse-content">
+                                <p>We can select HTML elements by using js DOM selector.</p>
+                                <p>We can select html elements in 5 ways by using DOM methods</p>
+                                <ol>
+                                    <li>1. getElementByTagName()</li>
+                                    <li>2. getElementById()</li>
+                                    <li>3. getElementByClassName()</li>
+                                    <li>4. querySelector()</li>
+                                    <li>5. querySelectorAll()</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- question 3 -->
+                <div class="card md:card-side bg-base-100 shadow-xl rounded-lg">
+                    <div class="w-full md:w-[40%]"><img class="w-full h-[250px] md:h-full rounded-lg"
+                            src="images/blog-image/event-bubble.png" alt="event-bubble" />
+                    </div>
+                    <div class="card-body px-2 w-full md:w-[60%]">
+                        <div tabindex="0"
+                            class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                            <div class="collapse-title text-xl md:text-2xl font-semibold">
+                                What is event bubble?
+                            </div>
+                            <div class="collapse-content">
+                                <p>when a user clicks on a button on the web page, the event handler under that button
+                                    propagates the event to its parent, its parent, and its parent again to the root
+                                    element Html. The event notifies all elements above it that someone has clicked on
+                                    it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- question 4 -->
+                <div class="card md:card-side bg-base-100 shadow-xl rounded-lg">
+                    <div class="w-full md:w-[40%]"><img class="w-full h-[250px] md:h-full rounded-lg"
+                            src="images/blog-image/callback.png" alt="callback" />
+                    </div>
+                    <div class="card-body px-2 w-full md:w-[60%]">
+                        <div tabindex="0"
+                            class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                            <div class="collapse-title text-xl md:text-2xl font-semibold">
+                                What is a callback function and why will you use it?
+                            </div>
+                            <div class="collapse-content">
+                                <p>A callback function is when a function is passed as an argument to a function, it is
+                                    executed after the main function is executed. So it is called callback function</p>
+                                <p><b>We can use callback function in 2 ways.</b></p>
+                                <p>1. as Anonymous Function</p>
+                                <p>2. as Regular Function</p>
+                                <p>We need callback functions to make sure that a function is only going to get executed
+                                    after a specific task is completed and not before its completion.</p>
+                                <p>in the case of an event listener, we first listen for a specific event, and if the
+                                    function detects it, then only the callback function is executed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById("geometryBtn").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>
